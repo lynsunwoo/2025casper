@@ -1,0 +1,23 @@
+@import 'common';
+
+// body, html{
+//   scroll-behavior:smooth;
+// } 스크롤 적용
+main{
+  overflow:hidden;
+  clear:both;//header영역에서 사용된 float속성이 있다면 해제한다.
+  >#movie{
+    height:100vh;
+    background-color:$line_color_g;
+    >video{width:100%;}
+  }
+  >#top3{
+    height:1146px;
+    background:#ffb0b0
+  }
+  >#intro{height:923px;background:#e0ff97;}
+  >#test_drive{height: 923px;background: #97ffdc;}
+  >#event{height: 923px;background: #97ffa0;}
+  >#buy{height: 923px;background: #ff97e0;}
+  >#customer{height: 923px;background: #b697ff;}
+}
