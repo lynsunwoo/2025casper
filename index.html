@@ -27,6 +27,10 @@
   <!-- 제이쿼리 쿠키 파일 -->
   <script src="./script/jquery.cookie.js"></script>
 
+  <!-- 스와이퍼 번들 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+
   <!-- 아크틱 스크롤 -->
   <script src="./script/jquery.arctic_scroll.js"></script>
   <!-- 
@@ -72,7 +76,7 @@
   <nav id="m_nav">
     <ul>
       <li><span class="number">1</span><a href="#intro" title="소개" class="arctic_scroll">소개</a></li>
-      <li><span class="number">2</span><a href="#test_drive" title="체험">체험</a></li>
+      <li><span class="number">2</span><a href="#test_drive" title="체험" class="arctic_scroll">체험</a></li>
       <li><span class="number">3</span><a href="#event" title="이벤트" class="arctic_scroll">이벤트</a></li>
       <li><span class="number">4</span><a href="#buy" title="구매" class="arctic_scroll">구매</a></li>
       <li><span class="number">5</span><a href="#customer" title="고객지원" class="arctic_scroll">고객지원</a></li>
@@ -84,28 +88,100 @@
   <main>
     <!-- 1. 자동차 소개 콘텐츠 -->
     <section id="movie">
+      <article class="m_info">
+        <h2>casper</h2>
+        <p>오직 캐스퍼 온라인에서만 구매하실 수 있습니다.</p>
+        <a href="https://casper.hyndai.con/vechicles/making/modal" title="나만의 캐스퍼 만들기">나만의 캐스퍼 만들기</a>
+        <a href="https://casper.hyndai.con/vechicles/benefit" title="구매 혜택보기">구매 혜택보기</a>
+        <a href="https://casper.hyndai.con/vechicles/highlight" title="자세히 보기">자세히 보기</a>
+      </article>
       <video muted autoplay loop>
         <source src="./images/main_KV.webm" type="video/webm">
       </video>
+
+      <a href="#top3" title="top3" class="arctic_scroll" id="next_btn">다음페이지로 이동</a>
     </section>
 
     <!-- 2. 가장 많이 찾는 캐스퍼 top3 -->
-    <section id="top3"></section>
+    <section id="top3">
+      <h2 class="m_title">가장 많이 찾는 캐스퍼 Top3</h2>
+      <p class="p01">지금 가장 인기 있는 조합을 확인해 보세요.</p>
+
+      <!-- 스와이퍼 슬라이드 -->
+      <div class="swiper top3">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <span class="rank">1위</span>
+            <h3 class="top3_title">가솔린 1.0 터보 인스퍼레이션</h3>
+            <img src="./images/color_khaki.02b812c.png" alt="카키">
+            <ul class="detail">
+              <li><span class="outer_color kaki">카키</span>외장색상<br>톰보이 카키</li>
+              <li><span class="inner_color black">블랙</span>내장색상<br>블랙</li>
+              <li>선택품목<br>캐스퍼 액티브 11</li>
+              <li><em class="price">18,700,000</em>원</li>
+            </ul>
+            <input type="button" value="견적내기 &gt;" class="btn b_btn">
+          </div>
+
+          <div class="swiper-slide">
+            <span class="rank">2위</span>
+            <h3 class="top3_title">가솔린 The Essential</h3>
+            <img src="./images/color_white.bebc88b.png" alt="화이트">
+            <ul class="detail">
+              <li><span class="outer_color white">화이트</span>외장색상<br>톰보이 화이트</li>
+              <li><span class="inner_color black">블랙</span>내장색상<br>블랙</li>
+              <li>선택품목<br>캐스퍼 액티브 11</li>
+              <li><em class="price">16,900,000</em>원</li>
+            </ul>
+            <input type="button" value="견적내기 &gt;" class="btn b_btn">
+          </div>
+
+          <div class="swiper-slide">
+            <span class="rank">3위</span>
+            <h3 class="top3_title">가솔린 1.0 디 에센셜 라이트</h3>
+            <img src="./images/color_orange.0c6edb3.png" alt="오렌지">
+            <ul class="detail">
+              <li><span class="outer_color orange">오렌지</span>외장색상<br>톰보이 오렌지</li>
+              <li><span class="inner_color black">블랙</span>내장색상<br>블랙</li>
+              <li>선택품목<br>캐스퍼 액티브 11</li>
+              <li><em class="price">14,900,000</em>원</li>
+            </ul>
+            <input type="button" value="견적내기 &gt;" class="btn b_btn">
+          </div>
+        </div>
+        <!-- 콘트롤 버튼 -->
+        <div class="swiper-pagination"></div>
+
+        <!-- 좌, 우 버튼 -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+    </section>
 
     <!-- 3. 소개페이지 -->
-    <section id="intro"></section>
+    <section id="intro">
+      <h2 class="m_title">소개</h2>
+    </section>
 
     <!-- 4. 시승신청하기 -->
-    <section id="test_drive"></section>
+    <section id="test_drive">
+      <h2 class="m_title">시승신청</h2>
+    </section>
 
     <!-- 5. event -->
-    <section id="event"></section>
+    <section id="event">
+      <h2 class="m_title">이벤트 &amp; 프로모션</h2>
+    </section>
 
     <!-- 6. 구매하기 -->
-    <section id="buy"></section>
+    <section id="buy">
+      <h2 class="m_title">캐스퍼 구매 안내</h2>
+    </section>
 
     <!-- 7. 고객지원 -->
-    <section id="customer"></section>
+    <section id="customer">
+      <h2 class="m_title">고객 지원</h2>
+    </section>
   </main>
   <!-- 메인 콘텐츠 끝 -->
 
@@ -169,7 +245,8 @@
             </p>
           </div>
         </div>
-        `;//백팅문자로 써야지 줄바꿈할 때 에러가 나지 않는다.
+        `;
+      //백팅문자로 써야지 줄바꿈할 때 에러가 나지 않는다.
 
       //모달창
       $('body').append(modal);
@@ -179,20 +256,20 @@
       let ch = $('#ch'); //체크박스 변수
 
       //만약 쿠키파일이 존재한다면 모달윈도 나오지 않게 한다.
-      if($.cookie('popup')=='none'){ //쿠기가 존재하고 값이 none이다.
+      if ($.cookie('popup') == 'none') { //쿠기가 존재하고 값이 none이다.
         $('.modal').hide();
       }
       //닫기버튼 클릭시 체크박스에 체크여부를 판단하여 체크되면 쿠키 생성
-      $('.modal #ch, .modal #c_btn').click(function(){
+      $('.modal #ch, .modal #c_btn').click(function () {
         closePopup();
       });
 
-      function closePopup(){
-        if(ch.is(':checked')){
+      function closePopup() {
+        if (ch.is(':checked')) {
           //체크박스가 체크되면 쿠키를 생성하고 저장
-          $.cookie('popup','none',{expires:1, path:'/'}); //쿠키파일 저장
+          $.cookie('popup', 'none', { expires: 1, path: '/' }); //쿠키파일 저장
           $('.modal').fadeOut();
-        }else{
+        } else {
           //체크박스에 체크를 하지 않은 경우라면 그냥 모달 윈도 닫는다.
           $('.modal').fadeOut();
         }
@@ -229,17 +306,85 @@
         h1.attr('src', './images/logo-casper-white.png');
       });
 
+      //아티크 스크롤 스크립트
       $(function () {
         $(".arctic_scroll").arctic_scroll({
           speed: 800
         });
       });
 
+      //스크롤 이벤트이용해서 네비 서식 변경
+      $(window).scroll(function () {
+        let sPos = $(this).scrollTop(); //세로스크롤 값을 구함
+        console.log(sPos); // 콘솔로 확인
 
+        // 스크롤시 네비 서식 변경
+        if (sPos >= 950) {
+          gnb.addClass('h_txt_color');
+          //헤더에도 .h_on 을 추가
+          $('header').addClass('h_on');
+          //아이콘 색상 변경
+          h_icon.addClass('h_txt_color');
+          //로고 이미지속성 src값 변경
+          h1.attr('src', './images/logo-casper_black.png');
 
+          // 마우스 오버시 이벤트가 적용되지 않도록 
+          $('header').mouseleave(function () {
+            gnb.addClass('h_txt_color');
+            //헤더에도 .h_on 을 추가
+            $('header').addClass('h_on');
+            //아이콘 색상 변경
+            h_icon.addClass('h_txt_color');
+            //로고 이미지속성 src값 변경
+            h1.attr('src', './images/logo-casper_black.png');
+          });
+        } else {
+          gnb.removeClass('h_txt_color');
+          //헤더에도 .h_on을 제거
+          $('header').removeClass('h_on');
+          //아이콘 색상변경
+          h_icon.removeClass('h_txt_color');
+          //로고 이미지 변경
+          h1.attr('src', './images/logo-casper-white.png');
 
+          $('header').mouseleave(function () {
+            gnb.removeClass('h_txt_color');
+            //헤더에도 .h_on 을 추가
+            $('header').removeClass('h_on');
+            //아이콘 색상 변경
+            h_icon.removeClass('h_txt_color');
+            //로고 이미지 변경
+            h1.attr('src', './images/logo-casper-white.png');
+          });
+        }
+      });
     });
+  </script>
+  <!-- Swiper JS 연결 -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
+  <script>
+    // top3 슬라이드 설정
+    var swiper = new Swiper(".top3", {
+      autoplay: {
+        delay: 3000, // 3초마다 자동전환
+        disableOnInteraction: false, // 유저가 조작해도 autoplay 유지
+      },
+      loop: true, // 무한 반복
+      slidesPerView: 1, // 한 화면에 1개씩 보이게
+      spaceBetween: 0, // 슬라이드 사이 간격
+      speed: 800, // 전환 속도(ms)
+      navigation: {
+        nextEl: ".top3 .swiper-button-next", // 다음 버튼
+        prevEl: ".top3 .swiper-button-prev", // 이전 버튼
+      },
+      pagination: {
+        el: ".top3 .swiper-pagination", // 페이지네이션
+        clickable: true, // 클릭으로 이동 가능
+      },
+
+      effect: "slide", // 'fade'나 'coverflow' 등으로 변경 가능
+    });
   </script>
 </body>
 
