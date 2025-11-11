@@ -161,16 +161,58 @@
     <!-- 3. 소개페이지 -->
     <section id="intro">
       <h2 class="m_title">소개</h2>
+      <span class="intro_title_left">강인하고<br>아이코닉한 SUV</span>
+      <span class="intro_title_right">젊고 역동적인<br> 감성의<br>SUV디자인</span>
+      <video muted autoplay>
+        <source src="./images/highlight_intro.mp4" type="video/mp4">
+      </video>
+      <a href="detail.html" title="더보기" class="btn b_btn">더보기</a>
     </section>
 
     <!-- 4. 시승신청하기 -->
     <section id="test_drive">
       <h2 class="m_title">시승신청</h2>
+      <p class="p_01">캐스퍼가 제공하는 편리한 시승 서비스를 이용해 보세요.</p>
+      <article class="test_drive_l">
+        <h3>현대자동차 드라이빙 라운지<br> / CASPER STUDIO 시승</h3>
+        <p>드라이빙라운지와 CASPER STUDIO에서<br> 캐스퍼를 체험해조세요.</p>
+        <a href="./php/test_drive.php" title="" class="test_d_btn1">시승 신청하기</a>
+        <a href="./php/test_drive_print.php" title="" class="test_d_btn2">시승 신청조회<span> &#x003e;</span></a>
+        <p class="test_d_p">&middot; 시승 신청은 만 21세 이상 운전면허 소지자면 누구나 이용 가능합니다.</p>
+      </article>
+      <article class="test_drive_r">
+        <h3>쏘카<br>카세어링 시승</h3>
+        <p>24시간 언제나 내 근처에서 편리하게<br> 캐스퍼를 체험하실 수 있습니다.</p>
+        <a href="./php/test_drive.php" title="" class="test_d_btn1">시승 신청하기</a>
+        <p class="test_d_p">&middot; 쏘카는 만 21세 이상, 운전면허 취득 1년 이상 시 이용할 수 있습니다.</p>
+      </article>
     </section>
 
     <!-- 5. event -->
     <section id="event">
       <h2 class="m_title">이벤트 &amp; 프로모션</h2>
+      <p class="p_01">다양한 이벤트 &amp; 프로모션과 함께 캐스퍼를 만나보세요.</p>
+      <div class="swiper event_s">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <a href="" title=""><img src="./images/event01.png" alt="이벤트 1"></a>
+          </div>
+          <div class="swiper-slide">
+            <a href="" title=""><img src="./images/event02.jpg" alt="이벤트 2"></a>
+          </div>
+          <div class="swiper-slide">
+            <a href="" title=""><img src="./images/event03.jpg" alt="이벤트 3"></a>
+          </div>
+          <div class="swiper-slide">
+            <a href="" title=""><img src="./images/event04.jpg" alt="이벤트 4"></a>
+          </div>
+          <div class="swiper-slide">
+            <a href="" title=""><img src="./images/event05.jpg" alt="이벤트 5"></a>
+          </div>
+        </div>
+        <!-- 콘트롤 버튼 -->
+        <div class="swiper-pagination"></div>
+      </div>
     </section>
 
     <!-- 6. 구매하기 -->
@@ -315,6 +357,7 @@
 
       //스크롤 이벤트이용해서 네비 서식 변경
       $(window).scroll(function () {
+
         let sPos = $(this).scrollTop(); //세로스크롤 값을 구함
         console.log(sPos); // 콘솔로 확인
 
@@ -357,7 +400,14 @@
             h1.attr('src', './images/logo-casper-white.png');
           });
         }
+        //화면 세로스크롤값이 2000px이상일 경우 양쪽 텍스트가 날라온다.
+        if (sPos >= 1930) {
+          $('.intro_title_left').delay(800).animate({ 'left': '200px' }, 500);
+          $('.intro_title_right').delay(1000).animate({ 'right': '150px' }, 500);
+        }
       });
+
+
     });
   </script>
   <!-- Swiper JS 연결 -->
@@ -385,6 +435,25 @@
 
       effect: "slide", // 'fade'나 'coverflow' 등으로 변경 가능
     });
+
+    // event 슬라이드 설정
+    var swiper = new Swiper(".event_s", {
+      autoplay: {
+        delay: 3000, // 3초마다 자동전환
+        disableOnInteraction: false, // 유저가 조작해도 autoplay 유지
+      },
+      loop: true, // 무한 반복
+      slidesPerView: 1, // 한 화면에 1개씩 보이게
+      spaceBetween: 0, // 슬라이드 사이 간격
+      speed: 800, // 전환 속도(ms)
+      pagination: {
+        el: ".event_s .swiper-pagination", // 페이지네이션
+        clickable: true, // 클릭으로 이동 가능
+      },
+
+      effect: "slide", // 'fade'나 'coverflow' 등으로 변경 가능
+    });
+    
   </script>
 </body>
 

@@ -1,4 +1,4 @@
-@use 'common'as*; 
+@use 'common' as*;
 
 $m_value: 80px;
 // body, html{
@@ -75,24 +75,15 @@ main {
     }
   }
 
-  >#top3 {
-    height: 1146px;
-    background: #ffb0b0
-  }
+  >#top3 {}
 
-  >#intro {
-    height: 923px;
-    background: #e0ff97;
-  }
+  >#intro {}
 
-  >#test_drive {
-    height: 923px;
-    background: #97ffdc;
-  }
+  >#test_drive {}
 
   >#event {
-    height: 923px;
-    background: #97ffa0;
+    background: $line_color_g;
+    padding-bottom:100px;
   }
 
   >#buy {
@@ -113,13 +104,15 @@ main {
   font-weight: bold;
   padding: $m_value 0px 10px 0px;
 }
+
 //버튼 서식 
-@mixin btn(){
-  border:1px solid $txt_color1;
-  background:$txt_color2;
-  padding:8px 26px;
+@mixin btn() {
+  border: 1px solid $txt_color1;
+  background: $txt_color2;
+  padding: 8px 26px;
 }
-.btn{
+
+.btn {
   @include btn;
 }
 
@@ -161,37 +154,43 @@ main {
         color: $txt_color5;
         padding: 30px;
       }
+
       /*자동차 사진*/
       img {
         width: 400px;
         padding: $m_value 0px;
-        transition:0.8s;
-        transform:scale(0.5);
-        transition-timing-function:cubic-bezier(0.1,1.0);
+        transition: 0.8s;
+        transform: scale(0.5);
+        transition-timing-function: cubic-bezier(0.1, 1.0);
       }
-      .swiper-slide-active img{
-        transform:scale(1.2);
+
+      .swiper-slide-active img {
+        transform: scale(1.2);
       }
+
       .detail {
         display: flex;
         justify-content: center;
         padding-bottom: 60px;
+
         >li {
           width: 190px;
-          padding:0px 20px;
-          text-align:left;
-          line-height:20px;
+          padding: 0px 20px;
+          text-align: left;
+          line-height: 20px;
           border-right: 1px solid $line_color_g;
-          font-size:$t_size_m;
+          font-size: $t_size_m;
         }
-        >li:last-child{
-          border:none;
-          padding-top:6px;
-          .price{
-            font-size:$t_size_t1;
-            color:$txt_color5;
-            font-style:normal;
-            font-weight:bold;
+
+        >li:last-child {
+          border: none;
+          padding-top: 6px;
+
+          .price {
+            font-size: $t_size_t1;
+            color: $txt_color5;
+            font-style: normal;
+            font-weight: bold;
           }
         }
       }
@@ -200,35 +199,194 @@ main {
 }
 
 /*색상 박스*/
-.outer_color, .inner_color{
-  display:inline-block;
-  width:56px;height:40px;
-  text-indent:-9999px;
-  float:left;
-  margin-right:10px;
+.outer_color,
+.inner_color {
+  display: inline-block;
+  width: 56px;
+  height: 40px;
+  text-indent: -9999px;
+  float: left;
+  margin-right: 10px;
 }
-.kaki{background: #494b3e;}
-.black{background: #000;}
-.white{background: #ffff;
-border:1px solid #ccc;}
-.orange{background:rgba(190,86,0);}
+
+.kaki {
+  background: #494b3e;
+}
+
+.black {
+  background: #000;
+}
+
+.white {
+  background: #ffff;
+  border: 1px solid #ccc;
+}
+
+.orange {
+  background: rgba(190, 86, 0);
+}
 
 .swiper-pagination-bullet {
   width: 100px !important;
   height: 10px !important;
-  background:$txt_color5 !important;
+  background: $txt_color5 !important;
   border-radius: 0px !important;
   margin: 0 5px !important;
   transition: all 0.3s;
 }
-.swiper-button-next, .swiper-button-prev{
-  margin:10px;
-  color:$txt_color3 !important;
+
+.swiper-button-next,
+.swiper-button-prev {
+  margin: 10px;
+  color: $txt_color3 !important;
 }
 
-.swiper-button-next{
-  transform:translateX(-100px) !important;
+.swiper-button-next {
+  transform: translateX(-100px) !important;
 }
-.swiper-button-prev{
-    transform:translateX(100px) !important;
+
+.swiper-button-prev {
+  transform: translateX(100px) !important;
 }
+
+/*3. 자동차 소개 페이지 서식*/
+#intro {
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+
+  .intro_title_left,
+  .intro_title_right {
+    position: absolute;
+    z-index: 100;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 40px;
+  }
+
+  .intro_title_left {
+    top: 180px;
+    // left:200px;
+    left: -300px;
+  }
+
+  .intro_title_right {
+    bottom: 280px;
+    // right:150px;
+    right: -300px;
+    text-align: right;
+  }
+
+  video {
+    width: 100%;
+    position: relative;
+  }
+
+  .m_title {
+    position: absolute;
+    width: 100%;
+    z-index: 100;
+    top: -120px;
+  }
+
+  .btn {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+  }
+}
+
+/*4. 시승신청 페이지 서식*/
+#test_drive {
+  text-align: center;
+
+  >.p_01 {
+    font-size: $t_size_ss;
+  }
+
+  >article {
+    width: 430px;
+    height: 280px;
+    border: 1px solid $line_color_g;
+    padding: 15px;
+    margin-top: 50px;
+    display: inline-block;
+    vertical-align: middle;
+
+    >h3 {
+      font-size: $t_size_t1;
+      padding-top: 20px;
+      font-weight: bold;
+      line-height: 30px;
+    }
+
+    >p {
+      padding: 20px 0px;
+      line-height: 22px;
+      margin-bottom: 30px;
+    }
+  }
+}
+
+@mixin btn1 {
+  padding: 10px 60px;
+  color: $txt_color2;
+  background: $txt_color5;
+  line-height: 30px;
+}
+
+.test_d_btn1 {
+  @include btn1;
+}
+
+.test_d_btn2 {
+  position: relative;
+  display: block;
+  top: 30px;
+  color: $nav_color1;
+  font-weight: 450;
+}
+
+.test_d_p {
+  transform: translateY(50px);
+}
+
+.test_drive_r .test_d_p {
+  transform: translateY(65px);
+}
+
+/*5. 이벤트 프로모션*/
+#event {
+  text-align: center;
+  >.p_01 {
+    font-size: $t_size_ss;
+  }
+  .event_s {
+    margin-top:50px;
+    width:70%;
+    overflow: hidden;
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+    .swiper-pagination {
+      position: static;
+      /* Swiper 기본 absolute 위치 해제 */
+      margin-top: 20px;
+      /* 이미지 아래 여백 */
+    }
+    .swiper-pagination-bullet {
+      width: 15px !important;
+      height: 15px !important;
+      background: $txt_color5 !important;
+      border-radius: 50px !important;
+      margin: 0 5px !important;
+      transition: all 0.3s;
+    }
+    .swiper-pagination-bullet-active{
+      width:100px !important;
+    }
+  }
