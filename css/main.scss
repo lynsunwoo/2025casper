@@ -1,10 +1,6 @@
-@use 'common' as*;
+@use 'common' as *;
 
 $m_value: 80px;
-// body, html{
-//   scroll-behavior:smooth;
-// } 스크롤 적용
-
 
 main {
   overflow: hidden;
@@ -75,25 +71,9 @@ main {
     }
   }
 
-  >#top3 {}
-
-  >#intro {}
-
-  >#test_drive {}
-
   >#event {
     background: $line_color_g;
-    padding-bottom:100px;
-  }
-
-  >#buy {
-    height: 923px;
-    background: #ff97e0;
-  }
-
-  >#customer {
-    height: 923px;
-    background: #b697ff;
+    padding-bottom: 100px;
   }
 }
 
@@ -360,33 +340,233 @@ main {
 /*5. 이벤트 프로모션*/
 #event {
   text-align: center;
+
   >.p_01 {
     font-size: $t_size_ss;
   }
+
   .event_s {
-    margin-top:50px;
-    width:70%;
+    margin-top: 50px;
+    width: 70%;
     overflow: hidden;
-      img {
-        width: 100%;
-        object-fit: cover;
-      }
-    }
-    .swiper-pagination {
-      position: static;
-      /* Swiper 기본 absolute 위치 해제 */
-      margin-top: 20px;
-      /* 이미지 아래 여백 */
-    }
-    .swiper-pagination-bullet {
-      width: 15px !important;
-      height: 15px !important;
-      background: $txt_color5 !important;
-      border-radius: 50px !important;
-      margin: 0 5px !important;
-      transition: all 0.3s;
-    }
-    .swiper-pagination-bullet-active{
-      width:100px !important;
+
+    img {
+      width: 100%;
+      object-fit: cover;
     }
   }
+
+  .swiper-pagination {
+    position: static;
+    /* Swiper 기본 absolute 위치 해제 */
+    margin-top: 20px;
+    /* 이미지 아래 여백 */
+  }
+
+  .swiper-pagination-bullet {
+    width: 15px !important;
+    height: 15px !important;
+    background: $txt_color5 !important;
+    border-radius: 50px !important;
+    margin: 0 5px !important;
+    transition: all 0.3s;
+  }
+
+  .swiper-pagination-bullet-active {
+    width: 100px !important;
+  }
+}
+
+/*6. 구매하기*/
+#buy {
+  text-align: center;
+
+  >.p01 {
+    font-size: $t_size_ss;
+    line-height: 50px;
+  }
+
+  article {
+    margin: 0 auto;
+    width: 1200px;
+
+    h3 {
+      font-size: $t_size_t2;
+      padding: 50px 0px;
+
+      >.t_color {
+        color: $nav_color1;
+      }
+    }
+
+    .buy_info_list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+
+      >li {
+        padding-top: 50px;
+
+        >h4 {
+          font-size: $t_size_m;
+        }
+
+        >p {
+          font-weight: 500;
+          line-height: 20px;
+        }
+
+        >iframe {
+          height: 100vh;
+        }
+
+        >img {
+          width: 80px;
+          padding: 15px 0px;
+        }
+      }
+
+      >li:last-child {
+        grid-column: 1/4;
+        // grid-area:3/1/4/4;
+      }
+
+      h4 {
+        font-size: $t_size_ss;
+
+      }
+    }
+  }
+}
+
+/*7. 고객 지원*/
+#customer {
+  background: #f4f4f4;
+  padding-bottom:100px;
+    strong{
+      font-size:$t_size_m;
+    }
+    a{color:$nav_color2;}
+  >article {
+    padding: 24px 0px;
+    width: 1200px;
+    margin: 15px auto;
+    background: $txt_color2;
+
+    //아이콘 서식
+    .car_icon, .member_icon{
+      background:url('../images/bg-support-ars.png');
+      display:inline-block;
+      height:46px;
+      text-indent:-99999px;
+      margin-top:30px;
+    }
+    //아이콘 크기 각각 설정 스프라이트 이미지 position으로 보이게
+    .car_icon{
+      width:75px;
+    }
+    .member_icon{
+      width:60px;
+      background-position: -90px 0px;
+      transform:translateY(-30px);
+    }
+    >h3 {
+      font-size: $t_size_m;
+      text-align: center;
+      padding-bottom: 10px;
+    }
+
+    .ars_left {
+      border-right: 1px solid $line_color_g;
+    }
+
+    .ars_left,
+    .ars_right {
+      width: 50%;
+      padding: 20px 30px;
+      box-sizing: border-box;
+      float: left;
+      display: flex;
+      justify-content: space-around;
+
+      //p태그 안에 요소들을 세로로 나열하기
+      >p{
+        display:flex;
+        flex-direction: column;
+        line-height:30px;
+        text-align:center;
+        align-items:center;
+      }
+      >dl{
+        line-height:24px;
+        dt{
+          font-weight:bold;
+        }
+      }
+    }
+  }
+  .cs_etc{
+    margin:0 auto;
+    width:1200px;
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    column-gap:20px;
+    row-gap:20px;
+    box-sizing: border-box;
+    >li{
+      display:flex;
+      flex-direction:column;
+      background:$txt_color2;
+      padding:30px;
+      line-height:30px;
+      p{
+        font-weight:bold;
+      }
+      .btn{
+        background:$txt_color5;
+        color:$txt_color2;
+        text-align:center;
+        width:100px;
+        position:absolute;
+        transform:translate(35px,200px);
+        cursor: pointer;
+      }
+    }
+    >li:last-child{
+      grid-column:1/5;
+      padding:0px;
+      width:100%;
+      >#r_banner{
+        width:100%;
+        height:300px;
+        overflow:hidden;
+        >img{
+          object-fit:cover;
+        }
+      }
+    }
+    >li:nth-child(4) 
+    {
+      img{
+        position:relative;
+        width:50px;
+        left:33%;top:10px;
+      }
+      div{
+        margin-top:30px; 
+        display:flex;
+        justify-content:center;
+        gap:30px;
+        >a{
+          padding:10px;
+        }
+      }
+    } 
+  }
+}
+
+/*float 속성을 제거하여 부모의 높이값을 생성 시켜준다*/
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
+}

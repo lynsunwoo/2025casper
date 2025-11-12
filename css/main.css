@@ -114,14 +114,6 @@ main > #event {
   background: #ccc;
   padding-bottom: 100px;
 }
-main > #buy {
-  height: 923px;
-  background: #ff97e0;
-}
-main > #customer {
-  height: 923px;
-  background: #b697ff;
-}
 
 .btn {
   border: 1px solid #333;
@@ -377,4 +369,182 @@ main > #customer {
 }
 #event .swiper-pagination-bullet-active {
   width: 100px !important;
+}
+
+/*6. 구매하기*/
+#buy {
+  text-align: center;
+}
+#buy > .p01 {
+  font-size: 14px;
+  line-height: 50px;
+}
+#buy article {
+  margin: 0 auto;
+  width: 1200px;
+}
+#buy article h3 {
+  font-size: 20px;
+  padding: 50px 0px;
+}
+#buy article h3 > .t_color {
+  color: #00B3FF;
+}
+#buy article .buy_info_list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+#buy article .buy_info_list > li {
+  padding-top: 50px;
+}
+#buy article .buy_info_list > li > h4 {
+  font-size: 16px;
+}
+#buy article .buy_info_list > li > p {
+  font-weight: 500;
+  line-height: 20px;
+}
+#buy article .buy_info_list > li > iframe {
+  height: 100vh;
+}
+#buy article .buy_info_list > li > img {
+  width: 80px;
+  padding: 15px 0px;
+}
+#buy article .buy_info_list > li:last-child {
+  grid-column: 1/4;
+}
+#buy article .buy_info_list h4 {
+  font-size: 14px;
+}
+
+/*7. 고객 지원*/
+#customer {
+  background: #f4f4f4;
+  padding-bottom: 100px;
+}
+#customer strong {
+  font-size: 16px;
+}
+#customer a {
+  color: #006EFF;
+}
+#customer > article {
+  padding: 24px 0px;
+  width: 1200px;
+  margin: 15px auto;
+  background: #fff;
+}
+#customer > article .car_icon, #customer > article .member_icon {
+  background: url("../images/bg-support-ars.png");
+  display: inline-block;
+  height: 46px;
+  text-indent: -99999px;
+  margin-top: 30px;
+}
+#customer > article .car_icon {
+  width: 75px;
+}
+#customer > article .member_icon {
+  width: 60px;
+  background-position: -90px 0px;
+  transform: translateY(-30px);
+}
+#customer > article > h3 {
+  font-size: 16px;
+  text-align: center;
+  padding-bottom: 10px;
+}
+#customer > article .ars_left {
+  border-right: 1px solid #ccc;
+}
+#customer > article .ars_left,
+#customer > article .ars_right {
+  width: 50%;
+  padding: 20px 30px;
+  box-sizing: border-box;
+  float: left;
+  display: flex;
+  justify-content: space-around;
+}
+#customer > article .ars_left > p,
+#customer > article .ars_right > p {
+  display: flex;
+  flex-direction: column;
+  line-height: 30px;
+  text-align: center;
+  align-items: center;
+}
+#customer > article .ars_left > dl,
+#customer > article .ars_right > dl {
+  line-height: 24px;
+}
+#customer > article .ars_left > dl dt,
+#customer > article .ars_right > dl dt {
+  font-weight: bold;
+}
+#customer .cs_etc {
+  margin: 0 auto;
+  width: 1200px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+  row-gap: 20px;
+  box-sizing: border-box;
+}
+#customer .cs_etc > li {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  padding: 30px;
+  line-height: 30px;
+}
+#customer .cs_etc > li p {
+  font-weight: bold;
+}
+#customer .cs_etc > li .btn {
+  background: #052B58;
+  color: #fff;
+  text-align: center;
+  width: 100px;
+  position: absolute;
+  transform: translate(35px, 200px);
+  cursor: pointer;
+}
+#customer .cs_etc > li:last-child {
+  grid-column: 1/5;
+  padding: 0px;
+  width: 100%;
+}
+#customer .cs_etc > li:last-child > #r_banner {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+#customer .cs_etc > li:last-child > #r_banner > img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#customer .cs_etc > li:nth-child(4) img {
+  position: relative;
+  width: 50px;
+  left: 33%;
+  top: 10px;
+}
+#customer .cs_etc > li:nth-child(4) div {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+#customer .cs_etc > li:nth-child(4) div > a {
+  padding: 10px;
+}
+
+/*float 속성을 제거하여 부모의 높이값을 생성 시켜준다*/
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
 }/*# sourceMappingURL=main.css.map */
