@@ -20,7 +20,6 @@ main {
       width: 100%;
       top: 40%;
       text-align: center;
-
       color: $txt_color2;
       line-height: 50px;
 
@@ -62,7 +61,8 @@ main {
 
     #next_btn {
       display: block;
-      text-indent: -9999px;
+      // text-indent: -9999px;
+      font-size:0px;
       position: absolute;
       bottom: 40px;
       left: 50%;
@@ -72,7 +72,7 @@ main {
   }
 
   >#event {
-    background: $line_color_g;
+    background:#f4f4f4;
     padding-bottom: 100px;
   }
 }
@@ -231,6 +231,7 @@ main {
 
 /*3. 자동차 소개 페이지 서식*/
 #intro {
+  margin-top:100px;
   height: 100vh;
   overflow: hidden;
   position: relative;

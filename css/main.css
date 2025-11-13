@@ -99,7 +99,7 @@ main > #movie .m_info a:first-of-type {
 }
 main > #movie #next_btn {
   display: block;
-  text-indent: -9999px;
+  font-size: 0px;
   position: absolute;
   bottom: 40px;
   left: 50%;
@@ -111,7 +111,7 @@ main > #movie #next_btn {
   transform: rotate(-45deg);
 }
 main > #event {
-  background: #ccc;
+  background: #f4f4f4;
   padding-bottom: 100px;
 }
 
@@ -246,6 +246,7 @@ main > #event {
 
 /*3. 자동차 소개 페이지 서식*/
 #intro {
+  margin-top: 100px;
   height: 100vh;
   overflow: hidden;
   position: relative;

@@ -1,0 +1,115 @@
+//@import 'common';
+@use 'common' as *;
+//sub.sass
+//서브페이지 헤더, 푸터 공동서식
+
+header {
+  position: static;
+}
+
+main {
+  width: 100%;
+  background: #ebebeb;
+  display: flex;
+  justify-content: center; // 가로 가운데
+  align-items: center; // 세로 가운데
+  min-height: calc(100vh - (234px));
+}
+
+//메인 메뉴 서식
+header nav .gnb a {
+  color: $txt_color1;
+}
+
+header .nav_icon span.fas {
+  color: $txt_color1;
+}
+
+//로그인 서식
+form {
+  width: 100%;
+  text-align: center;
+
+  fieldset {
+    margin: 0 auto;
+    width: 400px;
+
+    legend {
+      font-size: $t_size_t1;
+      font-weight: bold;
+      padding-bottom: 50px;
+    }
+
+    .box {
+      margin: 10px 0px;
+
+      input {
+        outline: none;
+        border: none;
+        width: 400px;
+        height: 40px;
+        text-indent: 10px;
+      }
+    }
+
+    .p_box {
+      margin-top: 10px;
+    }
+
+    .c_btn {
+      float: left;
+      margin: 10px;
+    }
+
+    .s_btn {
+      margin: 30px 0px;
+
+      >input {
+        outline: none;
+        border: none;
+        width: 400px;
+        height: 40px;
+        background: $txt_color5;
+        color: $txt_color2;
+        cursor: pointer;
+
+        &:hover {
+          background-color:rgb(5, 43, 88,.8);
+        }
+      }
+    }
+
+    p:last-child {
+      display: flex;
+      justify-content: center;
+
+      > a {
+        position: relative;
+        padding: 0px 10px;
+        
+        &:hover{
+          text-decoration:underline;
+        }
+      }
+
+      a::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        /* 세로 가운데 정렬 */
+        width: 1px;
+        /* 선 두께 */
+        height: 13px;
+        /* 선 길이 */
+        background: #333;
+        /* 선 색상 */
+      }
+
+      a:last-child::after {
+        display: none;
+      }
+    }
+  }
+}
